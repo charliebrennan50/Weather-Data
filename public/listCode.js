@@ -5,12 +5,13 @@ async function getData() {
 
     for (item of data) {
         const root = document.createElement('div');
-        const geo = document.createElement('div');
-        geo.textContent = `${item.lat}, ${item.long}`;
+        root.classList.add("rootFormat");
+        const loc = document.createElement('div');
+        loc.textContent = `${item.location}`;
         const date = document.createElement('div');
         const dateString = new Date(item.timestamp).toLocaleString();
         date.textContent = dateString;
-        root.append(geo, date);
+        root.append(loc, date);
         document.body.append(root);
     }
     console.log(data);
